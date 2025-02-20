@@ -1,6 +1,5 @@
 import { useState } from "react";
 // import logo from "../assets/logo.png";
-import { TfiAlignJustify } from "react-icons/tfi";
 import SearchInput from "./SearchInput";
 import logo from "../assets/logo.png";
 import Hamburger from 'hamburger-react'
