@@ -2,7 +2,9 @@ import { useState } from "react";
 // import logo from "../assets/logo.png";
 import { TfiAlignJustify } from "react-icons/tfi";
 import SearchInput from "./SearchInput";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
+import Hamburger from 'hamburger-react'
+
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,25 +31,26 @@ function NavBar() {
         </li>
       </ul>
       <SearchInput/>
-      <TfiAlignJustify className="xl:hidden text-3xl cursor-pointer " onClick={() => {
+      {/* <TfiAlignJustify className="xl:hidden text-3xl cursor-pointer " onClick={() => {
         setIsMenuOpen(!isMenuOpen);
-      }}/>
+      }}/> */}
+      <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
       
     </header>
     {isMenuOpen && <div
-        className={`relative xl:hidden  left-0 w-full bg-white flex flex-col items-center gap-6 font-semibold text-lg transform bg-gray-200`}
+        className={`relative xl:hidden  left-0 w-full  flex flex-col items-center gap-6 font-semibold text-lg transform `}
       >
         <ul className=" w-full justify-center items-center">
-        <li className="p-3 hover:bg-sky-400 hover:text-white transition-all cursor-pointer w-full text-center text-gray-500">
+        <li className="p-3 hover:bg-sky-400 hover:text-white transition-all cursor-pointer w-full text-center text-gray-500 border border-gray-300">
           Home
         </li>
-        <li className="p-3 hover:bg-sky-400 hover:text-white transition-all cursor-pointer text-center text-gray-500">
+        <li className="p-3 hover:bg-sky-400 hover:text-white transition-all cursor-pointer text-center text-gray-500  border-gray-300">
           Products
         </li>
-        <li className="p-3 hover:bg-sky-400 hover:text-white transition-all cursor-pointer text-center text-gray-500">
+        <li className="p-3 hover:bg-sky-400 hover:text-white transition-all cursor-pointer text-center text-gray-500  border-gray-300">
           Explore
         </li>
-        <li className="p-3 hover:bg-sky-400 hover:text-white transition-all cursor-pointer text-center text-gray-500">
+        <li className="p-3 hover:bg-sky-400 hover:text-white transition-all cursor-pointer text-center text-gray-500  border-gray-300">
           Contact
         </li>
         </ul>
